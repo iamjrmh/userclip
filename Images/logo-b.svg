@@ -1,0 +1,9 @@
+<!-- At 16px the silhouette still reads as one tall rounded portrait video, even if the interior play cutout is lost. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#191310"/>
+  <path
+    d="M164 60h184c35.3 0 64 28.7 64 64v264c0 35.3-28.7 64-64 64H164c-35.3 0-64-28.7-64-64V124c0-35.3 28.7-64 64-64Zm64 124c-9.3-5.8-21.3.9-21.3 11.8v120.4c0 10.9 12 17.6 21.3 11.8l96.3-60.2c8.7-5.4 8.7-18.1 0-23.6Z"
+    fill="#d9a05b"
+    fill-rule="evenodd"
+  />
+</svg>

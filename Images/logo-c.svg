@@ -1,0 +1,8 @@
+<!-- At 16px the silhouette still reads as one continuous recording bar with a bold central clip lifted above it. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#191310"/>
+  <path
+    d="M112 280h72V176c0-13.3 10.7-24 24-24h96c13.3 0 24 10.7 24 24v104h72c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H112c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24Z"
+    fill="#d9a05b"
+  />
+</svg>

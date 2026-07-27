@@ -1,0 +1,13 @@
+<!-- At 16px the silhouette still reads as one broad lowercase u, even if the interior play cutout is lost. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#191310"/>
+  <path
+    d="M156 128v140c0 72 42 108 100 108s100-36 100-108V128"
+    fill="none"
+    stroke="#d9a05b"
+    stroke-width="112"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path d="M228 346v60l64-30Z" fill="#191310"/>
+</svg>
