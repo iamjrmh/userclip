@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - userclip</title>
+<meta name="description" content="How userclip handles your data. Everything is processed on your own machine; the only outbound traffic is the model downloader and platforms you connect yourself.">
+<link rel="canonical" href="https://userclip.lol/privacy">
+<link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.remove("no-js");</script>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+
+<div class="page">
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="/">userclip<span>.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="/#pipeline">How it works</a>
+      <a href="/privacy" aria-current="page">Privacy Policy</a>
+      <a href="/terms">Terms</a>
+      <a class="nav-cta" href="https://github.com/JURMR/userclip/releases">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+<div class="wrap wrap-narrow">
+
+<h1>Privacy Policy</h1>
+<span class="effective">Effective 27 July 2026</span>
+
+<p style="margin-top:1.5rem">
+  userclip is a desktop application that turns long recordings into short clips.
+  It runs on your computer. This policy describes what it does with your data,
+  and separately what this website does.
+</p>
+
+<p>
+  <strong>The short version:</strong> userclip has no server, no account system,
+  and no analytics. Your recordings, transcripts, and clips are processed on your
+  own machine and are never sent to us, because there is nowhere to send them.
+  The application makes network requests in exactly two situations, and you start
+  both of them.
+</p>
+
+<div class="toc">
+  <p><strong>Contents</strong></p>
+  <ol>
+    <li><a href="#who">Who we are</a></li>
+    <li><a href="#collect">What we collect</a></li>
+    <li><a href="#local">Data stored on your device</a></li>
+    <li><a href="#network">When userclip uses the network</a></li>
+    <li><a href="#platforms">Connected platforms</a></li>
+    <li><a href="#website">This website</a></li>
+    <li><a href="#retention">Retention and deletion</a></li>
+    <li><a href="#rights">Your rights</a></li>
+    <li><a href="#children">Children</a></li>
+    <li><a href="#changes">Changes</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</div>
+
+<h2 id="who">1. Who we are</h2>
+<p>
+  userclip is an independent, open source project. In this policy, "userclip",
+  "we", and "us" refer to the project and its maintainer. "You" refers to the
+  person using the application or visiting this website.
+</p>
+<p>
+  Because the application has no backend service, the maintainer is not a
+  processor of your recordings in any technical sense: we never receive them.
+</p>
+
+<h2 id="collect">2. What we collect</h2>
+<p><strong>From the application: nothing.</strong> userclip contains no
+analytics, no telemetry, no crash reporting, no usage measurement, no
+advertising identifiers, and no account system. There is no server operated by
+this project for the application to talk to.</p>
+
+<p>Specifically, none of the following is transmitted to us at any point:</p>
+<ul>
+  <li>Video or audio you import, record, or export</li>
+  <li>Transcripts, captions, titles, or any text generated from your media</li>
+  <li>Your settings, folder paths, or file names</li>
+  <li>Your hardware details, operating system, or IP address</li>
+  <li>Whether or how often you use the application</li>
+  <li>Access tokens for any platform you connect</li>
+</ul>
+
+<h2 id="local">3. Data stored on your device</h2>
+<p>
+  userclip stores everything locally, in folders you choose during setup and in
+  its own application data directory. You can open every one of these from
+  Settings, under Privacy and Data.
+</p>
+
+<table>
+  <thead>
+    <tr><th>What</th><th>Where</th><th>Why</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Projects, clips, transcripts, settings, schedule</td>
+      <td>A SQLite database in the application data folder</td>
+      <td>So your work persists between sessions</td>
+    </tr>
+    <tr>
+      <td>Source recordings, exported clips, raw clips, replay buffer</td>
+      <td>Folders you choose</td>
+      <td>They are your files, kept where you put them</td>
+    </tr>
+    <tr>
+      <td>AI models</td>
+      <td>A folder you choose</td>
+      <td>They run locally and are several gigabytes</td>
+    </tr>
+    <tr>
+      <td>Access tokens for connected platforms</td>
+      <td>The same SQLite database</td>
+      <td>So you do not sign in again on every upload</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <strong>Access tokens are stored unencrypted</strong>, in the same local
+  database as everything else. userclip does not use the operating system
+  keychain. Anyone with access to your user account on your computer can read
+  them, in the same way they could read your other local files. We state this
+  plainly rather than implying protection that is not there. If that matters for
+  your situation, use full disk encryption and do not connect platforms on a
+  shared machine.
+</p>
+
+<h2 id="network">4. When userclip uses the network</h2>
+<p>
+  The application makes outbound requests in exactly two situations, both
+  started by you. It makes none in the background, none at startup, and none
+  while it is processing your video.
+</p>
+
+<h3>4.1 Downloading models</h3>
+<p>
+  When you choose to download AI models, userclip fetches them from
+  <strong>Hugging Face</strong> (huggingface.co) and, for some components, from
+  the publisher's own download URL. These requests transfer the model files to
+  you. They necessarily reveal your IP address to those hosts, and are governed
+  by their privacy policies, not this one. No information about your projects,
+  media, or settings is included in the request.
+</p>
+<p>
+  You may avoid this entirely: userclip supports fully offline installation by
+  fetching models on another machine and importing the folder.
+</p>
+
+<h3>4.2 Publishing a clip</h3>
+<p>
+  If you connect a platform and schedule a clip, userclip uploads that specific
+  clip file to that specific platform at the time you scheduled. That upload
+  goes directly from your machine to the platform. It does not pass through us.
+</p>
+<p>
+  Nothing is uploaded unless you have connected an account and scheduled or
+  manually sent a clip. Disconnecting a platform, or scheduling nothing, means
+  no upload ever occurs.
+</p>
+
+<h2 id="platforms">5. Connected platforms</h2>
+<p>
+  userclip can connect to YouTube, TikTok, X, and Instagram. Connecting uses each
+  platform's own OAuth sign in, opened in your normal web browser. userclip never
+  sees or stores your password for any platform.
+</p>
+<p>
+  <strong>You supply your own developer credentials.</strong> userclip does not
+  ship with shared API keys. You register your own application with the platform
+  and paste its client ID and secret into Settings. Your sign in is therefore
+  between you and that platform.
+</p>
+<p>
+  Once connected, the tokens are stored on your device as described above and
+  are used only to upload clips you scheduled and, on some platforms, to read
+  your account or channel name so the interface can display it.
+</p>
+<p>
+  Anything you post is then subject to that platform's own terms and privacy
+  policy. To revoke userclip's access, use the platform's own security settings:
+</p>
+<ul>
+  <li>Google and YouTube: <a href="https://myaccount.google.com/permissions" rel="noopener">Third party apps with account access</a></li>
+  <li>TikTok: Settings, Security, Manage app permissions</li>
+  <li>X: Settings, Security and account access, Apps and sessions</li>
+  <li>Instagram and Facebook: Settings, Apps and websites</li>
+</ul>
+<p>
+  Disconnecting inside userclip deletes the stored token from your device. It
+  does <strong>not</strong> revoke the grant on the platform. Use the links above
+  to do that.
+</p>
+
+<h2 id="website">6. This website</h2>
+<p>
+  userclip.lol is a static site hosted on <strong>GitHub Pages</strong>. It sets
+  no cookies, runs no analytics, embeds no trackers, and loads no third party
+  fonts, scripts, or resources. The typeface is served from this domain for that
+  reason.
+</p>
+<p>
+  GitHub, as the host, records standard server information for security and
+  abuse prevention, which can include your IP address and browser user agent.
+  That processing is GitHub's and is covered by the
+  <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub Privacy Statement</a>.
+  We do not have access to those logs and receive no reporting from them.
+</p>
+<p>
+  Links out to GitHub or to platform documentation are ordinary links. Following
+  one puts you on that site under its own policy.
+</p>
+
+<h2 id="retention">7. Retention and deletion</h2>
+<p>
+  We hold no data about you, so there is nothing for us to retain or delete.
+  Everything userclip creates lives on your computer, and you control it
+  completely.
+</p>
+<p>To remove it:</p>
+<ul>
+  <li>Settings, Privacy and Data, <strong>Delete everything</strong> removes the database, your settings, projects, and logs, behind a typed confirmation. It optionally removes exported clips, raw clips, and the replay buffer too.</li>
+  <li>Settings, Accounts, <strong>Disconnect</strong> removes a stored platform token.</li>
+  <li>Uninstalling the application, then deleting the folders you chose, removes the rest.</li>
+</ul>
+
+<h2 id="rights">8. Your rights</h2>
+<p>
+  Data protection law, including the GDPR and the CCPA, gives people rights to
+  access, correct, export, and delete personal data held about them by a company.
+</p>
+<p>
+  Those rights are satisfied here by construction rather than by a request
+  process: we hold no personal data about you, so there is nothing to access,
+  export, or erase. Your own copy is on your own device, and the application
+  gives you direct tools to read, export, and destroy all of it. We do not sell
+  or share personal information, because we have none.
+</p>
+
+<h2 id="children">9. Children</h2>
+<p>
+  userclip is a video production tool intended for general audiences and is not
+  directed at children under 13. We do not knowingly collect information from
+  anyone, of any age, as described throughout this policy.
+</p>
+
+<h2 id="changes">10. Changes</h2>
+<p>
+  If this policy changes, the revised version will be published at this address
+  with a new effective date. Material changes to how the application uses the
+  network will also be described in the release notes for the version that
+  introduces them.
+</p>
+
+<h2 id="contact">11. Contact</h2>
+<p>
+  Questions about this policy, or about how userclip handles data, can be sent to
+  <a href="mailto:hello@userclip.lol">hello@userclip.lol</a>. You can also open
+  an issue on the <a href="https://github.com/JURMR/userclip" rel="noopener">GitHub repository</a>.
+</p>
+<p class="subtle">
+  userclip is open source. If you would rather verify these claims than take
+  them on trust, the network code is the only place worth reading, and it is a
+  small part of the repository.
+</p>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="wordmark" href="/">userclip<span>.</span></a>
+      <p class="subtle" style="margin:0.5rem 0 0">Local AI video clipping. Free and open source.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="https://github.com/JURMR/userclip">GitHub</a>
+      <a href="mailto:hello@userclip.lol">Contact</a>
+    </nav>
+  </div>
+</footer>
+</div>
+</body>
+</html>

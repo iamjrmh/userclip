@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>userclip - local AI video clipping studio</title>
+<meta name="description" content="userclip turns long recordings into short vertical clips. Every model runs on your own machine: no account, no credits, no uploads, no watermark.">
+<link rel="canonical" href="https://userclip.lol/">
+<meta property="og:title" content="userclip">
+<meta property="og:description" content="Long recordings in, short vertical clips out. Every model runs on your own machine.">
+<meta property="og:url" content="https://userclip.lol/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://userclip.lol/assets/app-brand.png">
+<meta name="theme-color" content="#191310">
+<link rel="stylesheet" href="/styles.css">
+<script>
+document.documentElement.classList.remove("no-js");
+// Content is hidden by the reveal styles until the observer runs. If that
+// script never gets to run, this is what stops the page being permanently
+// blank: after a moment, show everything regardless.
+setTimeout(function () {
+  document.querySelectorAll("[data-reveal]:not(.shown)").forEach(function (el) {
+    el.classList.add("shown");
+  });
+}, 2500);
+</script>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+
+<div class="page">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="/">userclip<span>.</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/#pipeline">How it works</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms</a>
+      <a class="nav-cta" href="https://github.com/JURMR/userclip/releases">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero. Deliberately asymmetric: type carries the left, the real product
+     carries the right. A centred hero over a stock gradient is the single most
+     recognisable template tell. -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="badge">v0.1 for Windows</span>
+      <h1>Three hours in.<br>Eleven clips out.<br><span>Nothing uploaded.</span></h1>
+      <p class="lede">
+        userclip reads a recording, picks the moments that stand on their own,
+        frames them vertical, writes the captions, and renders. Every model runs
+        on your own hardware, so nothing is queued behind anybody else and
+        nothing leaves the machine.
+      </p>
+      <div class="cta-row">
+        <a class="button button-primary" href="https://github.com/JURMR/userclip/releases">
+          Download for Windows
+        </a>
+        <a class="button" href="https://github.com/JURMR/userclip">Read the source</a>
+      </div>
+      <p class="fineprint">
+        Free, open source, and unlimited. There is no plan to upgrade to.
+      </p>
+    </div>
+
+    <figure class="hero-shot">
+      <img src="/assets/app-brand.png" width="1296" height="809"
+           alt="The userclip application, showing the brand kit screen with a watermark preview and colour palette.">
+      <figcaption>Not a mockup. This is the application.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- The claim that carries the product, stated as three specifics rather than
+     three adjectives. -->
+<section class="strip">
+  <div class="wrap">
+    <dl class="facts">
+      <div data-reveal>
+        <dt>Runs on</dt>
+        <dd>Your GPU</dd>
+        <p>Or your CPU. It detects what you have and picks models that fit.</p>
+      </div>
+      <div data-reveal>
+        <dt>Sends out</dt>
+        <dd>Nothing</dd>
+        <p>No account, no telemetry, no queue. There is no server to send to.</p>
+      </div>
+      <div data-reveal>
+        <dt>Costs</dt>
+        <dd>Nothing</dd>
+        <p>No credits, no minutes, no export limit, no watermark.</p>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section id="pipeline" class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="label">How it works</p>
+      <h2 class="split-heading">
+        Five stages.<br><em>All of them on your machine.</em>
+      </h2>
+    </div>
+
+    <ol class="pipeline" data-reveal>
+      <li>
+        <span class="tick">01</span>
+        <h3>Transcribe</h3>
+        <p>Word level timing, which is what makes karaoke captions and frame accurate cuts possible at all.</p>
+      </li>
+      <li>
+        <span class="tick">02</span>
+        <h3>Analyze</h3>
+        <p>A language model returns clip bounds, a title, a hook, a score, and the reasoning behind each pick.</p>
+      </li>
+      <li>
+        <span class="tick">03</span>
+        <h3>Layout</h3>
+        <p>Face detection runs per clip, so framing follows what is actually on screen in that moment.</p>
+      </li>
+      <li>
+        <span class="tick">04</span>
+        <h3>Caption</h3>
+        <p>Subtitles written against the composed canvas, so text never lands in the wrong band.</p>
+      </li>
+      <li>
+        <span class="tick">05</span>
+        <h3>Render</h3>
+        <p>Hardware encoding through whichever encoder your machine actually has, proved by testing them.</p>
+      </li>
+    </ol>
+
+    <p class="aside" data-reveal>
+      Every stage records its own completion. A job interrupted by a crash, a
+      shutdown, or you sitting back down at the machine picks up at the first
+      stage that did not finish, not at the beginning.
+    </p>
+  </div>
+</section>
+
+<!-- Alternating editorial rows. Two features, each with the real screen, in
+     opposite directions so the page has a rhythm instead of a grid. -->
+<section class="section">
+  <div class="wrap">
+    <div class="feature" data-reveal>
+      <div class="feature-copy">
+        <p class="label">Live capture</p>
+        <h2>Clip the moment without leaving the game</h2>
+        <p>
+          A rolling replay buffer sits on disk while you play. Press the clip key
+          and userclip copies bytes out of it: no re-encode, no transcription, no
+          model, nothing that could stall a frame. The hotkey is a raw input hook,
+          so it fires inside exclusive fullscreen.
+        </p>
+        <p>
+          There is a second key that saves a clip <strong>no model will ever
+          touch</strong>, not even later, not even while you are away. The
+          database itself refuses to process one, so it is a guarantee rather
+          than a setting.
+        </p>
+      </div>
+      <figure class="feature-shot">
+        <img src="/assets/app-live.png" width="1296" height="809" loading="lazy"
+             alt="The Live screen, showing capture state, replay buffer health, and the clips saved this session.">
+      </figure>
+    </div>
+
+    <div class="feature feature-reverse" data-reveal>
+      <div class="feature-copy">
+        <p class="label">Idle editing</p>
+        <h2>It works while you are not</h2>
+        <p>
+          Clips you saved during a session are edited only when you step away.
+          userclip watches for keyboard and mouse idle, GPU load, free graphics
+          memory, whether anything is fullscreen, and whether you are on battery.
+        </p>
+        <p>
+          The moment you come back it stops, mid job, within seconds, and picks
+          up at the stage it lost. Schedule what is finished onto a calendar and
+          it posts on its own, never while you are recording.
+        </p>
+      </div>
+      <figure class="feature-shot">
+        <img src="/assets/app-calendar.png" width="1296" height="809" loading="lazy"
+             alt="The Calendar screen, showing a month grid for scheduling clips to connected platforms.">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Anti-features. Unusual, honest, and the fastest way to be believed. -->
+<section id="limits" class="section">
+  <div class="wrap wrap-mid">
+    <div class="section-head" data-reveal>
+      <p class="label">Before you download</p>
+      <h2 class="split-heading">What it <em>will not</em> do</h2>
+      <p class="lede">
+        Every tool's marketing page lists what it does. Here is the other half,
+        so you can decide before installing eight gigabytes of models.
+      </p>
+    </div>
+
+    <ul class="limits">
+      <li data-reveal>
+        <h3>It will not run well on a weak machine without help</h3>
+        <p>The good models want a GPU. On CPU only it still works, and it is slower in a way you will feel. userclip tells you which tier your hardware maps to instead of letting you find out.</p>
+      </li>
+      <li data-reveal>
+        <h3>It will not judge your footage the way you would</h3>
+        <p>The model finds moments that read well in a transcript. It has no idea what your audience finds funny. Treat the clip list as a first pass, not a verdict.</p>
+      </li>
+      <li data-reveal>
+        <h3>It will not caption perfectly</h3>
+        <p>Speech models mishear names and jargon every time. userclip learns the corrections you make and reapplies them, which reduces the problem rather than solving it.</p>
+      </li>
+      <li data-reveal>
+        <h3>It will not post to Instagram</h3>
+        <p>Instagram fetches video from a public URL rather than accepting an upload, so no local application can post to it. YouTube works today. TikTok and X need approval or a paid tier from them, not from us.</p>
+      </li>
+      <li data-reveal>
+        <h3>It will not exist on macOS or Linux yet</h3>
+        <p>The architecture keeps platform specific code at the edges, so both are reachable. Neither is built, and saying otherwise would waste your time.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="privacy" class="section">
+  <div class="wrap wrap-mid">
+    <div class="panel" data-reveal>
+      <p class="label">Privacy</p>
+      <h2>There is no server, so there is nowhere to send it</h2>
+      <p class="muted">
+        This is not a policy decision that could be reversed in an update. The
+        application has no backend, no account system, and no analytics. Your
+        recordings are opened, processed, and written back on the same machine.
+      </p>
+
+      <ul class="checklist">
+        <li><span class="tickmark" aria-hidden="true"></span>Recordings, transcripts, and clips never leave your computer.</li>
+        <li><span class="tickmark" aria-hidden="true"></span>No telemetry, no analytics, no crash reporting, no account.</li>
+        <li><span class="tickmark" aria-hidden="true"></span>Two things reach the internet, and you start both: downloading a model, and posting a clip to a platform you connected yourself.</li>
+        <li><span class="tickmark" aria-hidden="true"></span>Nothing of ours ends up in your exports. No watermark, no credit, no metadata.</li>
+      </ul>
+
+      <div class="cta-row">
+        <a class="button" href="/privacy">Read the privacy policy</a>
+        <a class="button button-quiet" href="/terms">Terms of service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-last">
+  <div class="wrap wrap-mid closer">
+    <h2 class="split-heading">Get it, or read it first.<br><em>Both are free.</em></h2>
+    <div class="cta-row">
+      <a class="button button-primary" href="https://github.com/JURMR/userclip/releases">Download for Windows</a>
+      <a class="button" href="https://github.com/JURMR/userclip">Source on GitHub</a>
+    </div>
+    <p class="fineprint">
+      Needs Windows 10 or 11, and roughly 8GB of disk for the recommended model
+      set. You choose the folder, and it never defaults to your system drive.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="wordmark" href="/">userclip<span>.</span></a>
+      <p class="fineprint" style="margin:0.5rem 0 0">Local AI video clipping. Free and open source.</p>
+    </div>
+    <nav aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="https://github.com/JURMR/userclip">GitHub</a>
+      <a href="mailto:hello@userclip.lol">Contact</a>
+    </nav>
+  </div>
+</footer>
+</div>
+
+<script>
+// Scroll reveal, staggered within each group.
+//
+// Motion here is doing one job: keeping a long page from arriving as a wall.
+// So it is slight, it runs once, and each element is unobserved the moment it
+// lands rather than being recalculated for the rest of the session. Anyone who
+// has asked their system for less motion gets none of it.
+(function () {
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var items = document.querySelectorAll("[data-reveal]");
+
+  if (reduced.matches || !("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("shown"); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var group = entry.target.parentElement;
+      var peers = group ? Array.prototype.filter.call(
+        group.children, function (el) { return el.hasAttribute("data-reveal"); }
+      ) : [];
+      var index = peers.indexOf(entry.target);
+      // Between 30 and 80ms reads as a cascade. Longer reads as slow, and the
+      // cap keeps a long list from making its last item wait a full second.
+      entry.target.style.transitionDelay = Math.min(index, 6) * 55 + "ms";
+      entry.target.classList.add("shown");
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+  items.forEach(function (el) { observer.observe(el); });
+})();
+</script>
+</body>
+</html>
