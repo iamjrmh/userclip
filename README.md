@@ -11,7 +11,7 @@ No account, no credits, no watermark, no upload.
 
 [![Windows](https://img.shields.io/badge/Windows%2010%20%2F%2011-supported-d9a05b?style=flat-square)](https://github.com/iamjrmh/userclip/releases)
 [![Runs locally](https://img.shields.io/badge/processing-100%25%20local-9cad7b?style=flat-square)](https://userclip.lol/privacy)
-[![Price](https://img.shields.io/badge/price-free%20forever-d9a05b?style=flat-square)](https://userclip.lol)
+[![Price](https://img.shields.io/badge/price-free-d9a05b?style=flat-square)](https://userclip.lol)
 
 [**Download**](https://github.com/iamjrmh/userclip/releases) &nbsp;·&nbsp;
 [Website](https://userclip.lol) &nbsp;·&nbsp;
