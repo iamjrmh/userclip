@@ -108,11 +108,9 @@ metadata identifying the tool.
 Connect the platforms you use, plan clips onto the calendar, and userclip
 uploads them at the time you chose. Uploads never run while you are recording.
 
-Each platform shows what it will actually accept, and what it will not.
-**YouTube works today.** TikTok needs their app review, X needs a paid API tier,
-and Instagram cannot accept an upload from any local application because it
-fetches video from a public URL instead. See
-[docs/PUBLISHING.md](docs/PUBLISHING.md) for the setup.
+Each platform shows what it will actually accept, and what it will not, so a
+clip is never rejected after a long upload for a reason you could have seen
+first.
 
 <br>
 
@@ -150,15 +148,6 @@ before installing eight gigabytes of models.
   than accepting an upload, so no local application can.
 - **It will not run on macOS or Linux yet.** The architecture keeps platform
   code at the edges so both are reachable. Neither is built.
-
-<br>
-
-## Documentation
-
-| | |
-|---|---|
-| [Connecting a platform](docs/PUBLISHING.md) | Setting up YouTube, TikTok, X, and Instagram |
-| [Models and licenses](MODELS.md) | Every model and font, with its license |
 
 <br>
 

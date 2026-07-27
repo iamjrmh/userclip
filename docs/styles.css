@@ -177,6 +177,14 @@ body {
   text-decoration: none;
 }
 
+.wordmark img {
+  border-radius: 6px;
+  margin-right: 0.5rem;
+  /* Nudged onto the text baseline. A square placed inline beside type hangs
+     below it by default, which reads as a misalignment rather than a lockup. */
+  transform: translateY(4px);
+}
+
 .wordmark span { color: var(--accent); }
 
 .site-nav {
